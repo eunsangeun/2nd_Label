@@ -1,13 +1,75 @@
+@import 'reset.css';
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-color: #fff;
+    margin: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.root-wrap {
+    position: relative; /* Change from absolute to relative */
+    width: 100%;
+    min-height: 100vh; 
+    margin: 0;
 }
+
+/* header 시작 */
+.header-container {
+    background-color: none;
+    color: rgb(12, 11, 11);
+    padding: 30px;
+    width: 100%; /* Set width to 100% */
+    box-sizing: border-box;
+}
+
+
+.header-wrap {
+    height: 64px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.header-left-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%; 
+}
+
+.header-left-wrap ul {
+    display: flex;
+    margin-left: 0;
+
+}
+
+.header-left-wrap li {
+    padding: 8px;
+    margin-right: 120px;
+}
+
+.header-nav {
+    list-style: none;
+    display: flex;
+    align-items: center; /* 중앙 정렬을 위해 추가 */
+}
+
+.header-nav-item {
+    text-decoration: none;
+    color: #565855;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.header-nav-item:not(:last-child) {
+    margin-right: 20px; /* 항목 간의 간격 조정 */
+}
+
+.header-nav-item.active {
+    color: #0f6e2f; /* Change to your desired color */
+  }
+  
+/* header 끝 */
+
+
+
