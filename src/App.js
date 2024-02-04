@@ -12,6 +12,7 @@ import Detail from "./pages/Detail";
 import Button from "react-bootstrap";
 import data  from "./data";
 import { useState } from "react";
+import ShoppingList from "./pages/ShoppingList";
 function App() {
   let [shoes] = useState(data)
   return (
@@ -30,6 +31,8 @@ function App() {
 
           <Route path="/*" element={<NotFound />} />
           <Route path="/detail" element={<Detail />} />
+          <Route path="/shoppinglist" element={<ShoppingList />} />
+
         </Routes>
       </BrowserRouter>
     </div>

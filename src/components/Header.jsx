@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import LogoImg from './15.png';
 import Person from './person.png'
+import ShoppingList from './shoppinglist.png';
 
 export default function Header() {
   const location = useLocation();
@@ -76,7 +77,7 @@ export default function Header() {
                 마이페이지
               </Link>
             </li>
-          </ul>
+          <li>
           <Link
             style={{ display: 'flex', alignItems: 'center' }}
             to="/"
@@ -89,6 +90,21 @@ export default function Header() {
               alt="로고"
             />
           </Link>
+          </li>
+          <li>
+             <Link
+                className={`header-nav-item ${activeLink === '/shoppinglist' ? 'active' : ''}`}
+                to="/shoppinglist"
+                onClick={() => handleNavLinkClick('/shoppinglist')}
+              >
+                <img
+              style={{ width: "30px", height: "30px" }}
+              src={ShoppingList}
+              alt="로고"
+            />
+              </Link>
+          </li>
+          </ul>
         </div>
         
         <div></div>
