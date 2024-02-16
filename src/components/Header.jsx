@@ -94,7 +94,7 @@ export default function Header() {
           <li>
              <Link
                 className={`header-nav-item ${activeLink === '/shoppinglist' ? 'active' : ''}`}
-                to="/shoppinglist"
+                to="/cart"
                 onClick={() => handleNavLinkClick('/shoppinglist')}
               >
                 <img

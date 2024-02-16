@@ -72,5 +72,29 @@ body {
 /* header 끝 */
 
 
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px; /* 각 글자 간격을 조절합니다. */
+    text-align: center; /* 텍스트를 중앙 정렬합니다. */
+    
+  }
+ 
+  .container label span {
+    margin-right: 10px; /* 라벨 텍스트와 입력 창 사이의 간격을 조절합니다. */
+    white-space: nowrap; /* 줄바꿈 방지 */
+  }
   
-
+  .container input {
+    width: 400px;
+    padding: 10px;
+  }
+  .form-control {
+    display: inline-block;
+    width: 400px;
+    margin-right: 10px;
+  }
+  
+  /* 추가적으로 원하는 스타일링을 여기에 추가할 수 있습니다. */
+  

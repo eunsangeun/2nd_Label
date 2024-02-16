@@ -1,64 +1,40 @@
-import React from "react";
-import SharingClothes from "./SharingClothes";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
+import React from 'react';
+import { useParams, Link } from 'react-router-dom';
+import Button from '@mui/material/Button';
 
-export default function Detail() {
+function Detail(props) {
+  let { id } = useParams();
+  console.log(id);
+
+  // id를 정수로 변환, 실패 시 기본값 0 사용
+  const shoeId = parseInt(id, 10) || 0;
+
+  // props.shoes가 정의되어 있지 않거나, 길이가 0인 경우
+  if (!props.shoes || props.shoes.length === 0 || isNaN(shoeId) || shoeId < 0 || shoeId >= props.shoes.length) {
+    return (
+      <div>
+        <p>잘못된 상품 ID이거나 상품 정보가 없습니다.</p>
+      </div>
+    );
+  }
+
   return (
-    <div className="page-container" style={{ fontSize: "32px", textAlign: "left" }}>
-      <style>
-        {`
-          .container {
-            display: flex;
-            align-items: flex-start;
-          }
-
-          .box {
-            margin-left: 80px; /* 수정: 우측이 아니라 좌측에 여백을 주도록 변경 */
-            background-color: lightgray;
-            padding: 10px;
-            width : 800px;
-          }
-
-          img {
-            width: 50%;
-
-          }
-
-          @media (max-width: 1000px) {
-            .container {
-              flex-direction: column;
-              align-items: flex-start;
-            }
-
-            .box {
-              margin-left: 0; /* 수정: 모바일에서는 좌측 여백을 없애도록 변경 */
-              margin-bottom: 10px;
-            }
-
-            img {
-              width: 100%;
-            }
-
-            .box p {
-                margin-bottom: 10px; /* 수정: 각각의 <p> 태그 사이에 10px 간격을 추가 */
-            }
-          }
-        `}
-      </style>
-      <div className="container">
-        <img
-          src="https://codingapple1.github.io/shop/shoes1.jpg"
-          alt="신발"
-        />
-        <div className="box">
-            <h2>상품명</h2><br></br>
-            <p>구분</p><br></br>
-            <p>??까지 남은시간</p><br></br>
-            <p>특이사항</p><br></br>
-            <Button variant="outline-success">구매하기</Button>{' '}
+    <div className="container">
+      <div className="row">
+        <div className="col-md-6">
+          <img src={`https://codingapple1.github.io/shop/shoes${shoeId}.jpg`} width="100%" alt={`Shoe ${shoeId}`} />
+        </div>
+        <div className="col-md-6 mt-4">
+          <h4 className="pt-5">{props.shoes[shoeId].title}</h4>
+          <p>{props.shoes[shoeId].content}</p>
+          <p>{props.shoes[shoeId].price}원</p>
+          <Link to={`/delivery/${shoeId}`}>
+            <Button variant="contained">구매하기</Button>
+          </Link>
         </div>
       </div>
     </div>
   );
 }
+
+export default Detail;
