@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CenteredRectangleBox = () => {
+  const navigate = useNavigate();
+
   // 쿠폰 내역 데이터
   const couponData = [
     { no: 1, productName: '상품 A' },
@@ -16,6 +19,11 @@ const CenteredRectangleBox = () => {
     { orderNo: '2022003', orderProduct: '상품 Z' },
     // 추가적인 주문 내역을 필요에 따라 여기에 추가할 수 있습니다.
   ];
+
+  const handleClick = () => {
+    // Calendar 페이지로 이동
+    navigate('/calendar');
+  };
 
   return (
     <div
@@ -55,7 +63,7 @@ const CenteredRectangleBox = () => {
           }}
         >
           {/* Inner rectangle content */}
-          <p style={{ marginBottom: '10px', marginTop: '40px', marginLeft: '50px' }}>certificate issue</p>
+          <button onClick={handleClick} style={{ marginBottom: '10px', marginTop: '40px', marginLeft: '50px' }}>certificate issue</button>
         </div>
       </div>
 
@@ -119,3 +127,4 @@ const CenteredRectangleBox = () => {
 };
 
 export default CenteredRectangleBox;
+

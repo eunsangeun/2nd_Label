@@ -1,0 +1,42 @@
+.donation-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 68vh;
+  }
+  
+  .title {
+    color: #0F4B43;
+    font-weight: bold;
+    font-size: '1.5em';
+  }
+  
+  .qr-code {
+    margin-top: 100px;
+    text-align: center;
+  }
+  
+  .qr-code img {
+    max-width: 300px;
+  }
+  
+  .button-container {
+    margin-top: 90px; /*qr이미지와 버튼 사이 간격*/
+  }
+  
+  .donation-link-button {
+    background-color: #0F4B43;
+    color: white;
+    padding: 25px 26px;
+    border: none;
+    border-radius: 5px;
+    font-size: 23px;
+    font-family: "Black Han Sans", sans-serif;
+    cursor: pointer;
+  }
+  
+  .donation-link-button:hover {
+    background-color: #0C352F;
+  }
+  

@@ -14,8 +14,10 @@ import data  from "./data";
 import { useState } from "react";
 import Cart from "./pages/Cart";
 import Loginpage from "./pages/Loginpage";
+import Calendar from "./pages/Calendar";
 import Delivery from "./pages/Delivery";
 import SignUpPage from "./pages/SignUpPage";
+
 function App() {
   let [shoes] = useState(data)
   return (
@@ -40,6 +42,7 @@ function App() {
           <Route path="/cart" element={<Cart/>} />
           <Route path="/loginpage" element={<Loginpage/>} />
           <Route path="/signup" element={<SignUpPage/>} />
+          <Route path="/calendar" element={<Calendar/>} />
         </Routes>
       </BrowserRouter>
     </div>
