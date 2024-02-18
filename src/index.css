@@ -1,0 +1,100 @@
+@import 'reset.css';
+
+body {
+    background-color: #fff;
+    margin: 0;
+}
+
+.root-wrap {
+    position: relative; /* Change from absolute to relative */
+    width: 100%;
+    min-height: 100vh; 
+    margin: 0;
+}
+
+/* header 시작 */
+.header-container {
+    background-color: none;
+    color: rgb(12, 11, 11);
+    padding: 30px;
+    width: 100%; /* Set width to 100% */
+    box-sizing: border-box;
+}
+
+
+.header-wrap {
+    height: 64px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.header-left-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%; 
+}
+
+.header-left-wrap ul {
+    display: flex;
+    margin-left: 0;
+
+}
+
+.header-left-wrap li {
+    padding: px;
+    margin-right: 100px;
+}
+
+.header-nav {
+    list-style: none;
+    display: flex;
+    align-items: center; /* 중앙 정렬을 위해 추가 */
+}
+
+.header-nav-item {
+    text-decoration: none;
+    color: #565855;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.header-nav-item:not(:last-child) {
+    margin-right: 20px; /* 항목 간의 간격 조정 */
+}
+
+.header-nav-item.active {
+    color: #0f6e2f; /* Change to your desired color */
+  }
+  
+/* header 끝 */
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px; /* 각 글자 간격을 조절합니다. */
+    text-align: center; /* 텍스트를 중앙 정렬합니다. */
+    
+  }
+ 
+  .container label span {
+    margin-right: 10px; /* 라벨 텍스트와 입력 창 사이의 간격을 조절합니다. */
+    white-space: nowrap; /* 줄바꿈 방지 */
+  }
+  
+  .container input {
+    width: 400px;
+    padding: 10px;
+  }
+  .form-control {
+    display: inline-block;
+    width: 400px;
+    margin-right: 10px;
+  }
+  
+  /* 추가적으로 원하는 스타일링을 여기에 추가할 수 있습니다. */
+  
