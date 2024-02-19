@@ -1,50 +1,52 @@
-import React from 'react'
-import { Link, Route, Routes } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Detail from './Detail';
-import data from '../data';
-import bg from '../bg.png'
-import { useState } from 'react';
-import shoes from '../data'
-export default function SharingClothes() {
+import upcyclingData from '../data';
+import bg from '../bg.png';
 
-  let [shoes] = useState(data)
-  
+export default function Upcycling() {
+  let [items] = useState(upcyclingData);
+
+  // 데이터를 8번째 배열부터 시작되도록 변경
+  const displayedItems = items.slice(7);
+
   return (
-    
     <Routes>
-    <Route path='/' element={
-      <>
-        <div className="container">
-          <div className="row">
-
-            <div className='main-bg' style={{ backgroundImage: 'url(' + bg + ')' }}>
-              {/*js에서 변수넣고 싶을 때 그냥 넣으면안되고 변수 중간에 문자넣는 문법사용해야함*/}
+      <Route
+        path="/"
+        element={
+          <>
+            <div className="container">
+              <div className="row">
+                <div className="main-bg" style={{ backgroundImage: 'url(' + bg + ')' }}>
+                  {/* js에서 변수를 넣고 싶을 때 그냥 넣으면 안되고 변수 중간에 문자를 넣는 문법을 사용해야함 */}
+                </div>
+                {displayedItems.map((item, i) => (
+                  <Card key={i} item={item} index={i + 8}></Card>
+                ))}
+              </div>
             </div>
-            {
-              shoes.map((a, i) => {
-                return (
-                  <Card shoes={shoes[i]} i={i + 1}></Card>
-                )
-              })
-            }
-          </div>
-        </div>
-      </>
-    } />
-    <Route path='/detail/:id' element={<Detail shoes={shoes} />} />
-    {/*props전송. detail->shoes*/}
-  </Routes>
-
-
+          </>
+        }
+      />
+      <Route path="/detail/:id" element={<Detail items={items} />} />
+    </Routes>
   );
 }
 
 function Card(props) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/detail/${props.index}`);
+  };
+
   return (
-    <div className="col-md-4">
-      <img src={'https://codingapple1.github.io/shop/shoes' + (props.i) + '.jpg'} width="80%" />
-      <h4>{props.shoes.title}</h4>
-      <p>{props.shoes.price}</p>
+    <div className="col-md-4" onClick={handleClick} style={{ cursor: 'pointer' }}>
+      {/* 이미지 경로 및 데이터 속성 변경 */}
+      <img src={`https://doeuni.github.io/coding/shoes${props.index}.png`} width="250px" height="250px" alt={`Item ${props.index}`} />
+      <h4>{props.item.title}</h4>
+      <p>{props.item.price}</p>
     </div>
   );
 }
