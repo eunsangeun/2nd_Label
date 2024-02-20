@@ -31,18 +31,45 @@ export default function HomePage() {
     };
   }, []);
 
+// 정보 박스 스타일
+const infoBoxStyle = {
+  width: '600px',
+  height: '400px',
+  backgroundColor: '#0F4B43',
+  lineHeight: '1.5',
+  display: 'flex', // 수평 가운데 정렬을 위해 Flexbox를 사용합니다.
+  justifyContent: 'center', // 수평 가운데 정렬을 합니다.
+  alignItems: 'center', // 수직 가운데 정렬을 합니다.
+  position: 'relative',
+};
+
+  // 텍스트 스타일
+  const headingStyle = {
+    fontSize: '24px', // 헤딩 텍스트의 크기를 조절합니다.
+  };
+  
+  const textStyle = {
+    position: 'absolute', // 위치를 조정하기 위해 position을 추가합니다.
+    top: '50%', // 부모 요소의 50% 위치로 이동합니다.
+    left: '50%', // 부모 요소의 50% 위치로 이동합니다.
+    transform: 'translate(-50%, -50%)', // 수평 및 수직 정렬을 위해 이동합니다.
+    color: 'white',
+  };
+  
   return (
     <div className="page-container" style={styles.container}>
       <div style={styles.mapContainer} ref={mapContainerRef}></div>
       <div style={styles.infoBox}>
         {/* 정보 박스 */}
-        <div style={{ width: '400px', height: '300px', backgroundColor: 'lightgreen', textAlign: 'center', lineHeight: '1.5' }}>
-          <p>
-            헌옷수거함 이용방법<br />
+        <div style={infoBoxStyle}>
+        <p style={{...textStyle, ...headingStyle}}>
+          헌옷수거함 이용방법<br />
+          <span style={{ fontSize: '18px' }}>
             1. 헌옷수거함 앞에 있는 QR 코드를 스캔하세요. <br />
             2. QR 코드로 연결된 링크를 통해 나타나는 작성 양식에 필요한 정보를 입력하세요. <br />
             3. 작성 양식에 사진을 첨부해주셔야 2ndLabel을 이용할 수 있는 쿠폰을 받을 수 있습니다.
-          </p>
+          </span>
+        </p>
         </div>
       </div>
     </div>
@@ -62,10 +89,11 @@ const styles = {
     backgroundColor: 'lightblue',
     marginRight: '100px', // 두 직사각형 사이의 간격
   },
-  infoBox: {
-    width: '600px',
-    height: '400px',
-    backgroundColor: 'lightgreen',
-    textAlign: 'center',
-  },
+  // infoBox: {
+  //   width: '600px',
+  //   height: '400px',
+  //   backgroundColor: '0F4B43',
+  //   textAlign: 'center',
+  // },
 };
+

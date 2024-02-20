@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 const CenteredRectangleBox = () => {
   const navigate = useNavigate();
 
@@ -26,6 +27,7 @@ const CenteredRectangleBox = () => {
   };
 
   return (
+    
     <div
       style={{
         display: 'flex',
@@ -68,60 +70,59 @@ const CenteredRectangleBox = () => {
       </div>
 
       {/* Coupon section */}
-      <div
-        style={{
-          marginTop: '20px',
-          width: '800px',
-          padding: '20px',
-        }}
-      >
-        <h2>Coupon 내역</h2>
-        <hr style={{ margin: '20px 0', border: '1px solid black' }} />
-        <div style={{ display: 'flex', borderBottom: '1px solid black', paddingBottom: '10px' }}>
-          <div style={{ flex: 1, marginRight: '10px', paddingLeft: '10px', borderRight: '1px solid black' }}>
-            <p>No</p>
-            {couponData.map((coupon) => (
-              <p key={coupon.no}>{coupon.no}</p>
-            ))}
-          </div>
-          <div style={{ flex: 2, paddingLeft: '10px' }}>
-            <p>상품명</p>
-            {couponData.map((coupon) => (
-              <p key={coupon.no}>{coupon.productName}</p>
-            ))}
-          </div>
-        </div>
-        {/* 추가적인 쿠폰 내역을 여기에 추가할 수 있습니다. */}
-       
-      </div>
+<div
+  style={{
+    marginTop: '20px',
+    width: '800px',
+    padding: '20px',
+  }}
+>
+  <h2>Coupon 내역</h2>
+  <hr style={{ margin: '20px 0', border: '1px solid black' }} />
+  <div style={{ display: 'flex', borderBottom: '1px solid black', paddingBottom: '10px' }}>
+    <div style={{ flex: 1, marginRight: '10px', paddingLeft: '10px', borderRight: '1px solid black' }}>
+      <p style={{ marginBottom: '10px' }}>No</p>
+      {couponData.map((coupon) => (
+        <p key={coupon.no} style={{ marginBottom: '10px' }}>{coupon.no}</p>
+      ))}
+    </div>
+    <div style={{ flex: 2, paddingLeft: '10px' }}>
+      <p style={{ marginBottom: '10px' }}>상품명</p>
+      {couponData.map((coupon) => (
+        <p key={coupon.no} style={{ marginBottom: '10px' }}>{coupon.productName}</p>
+      ))}
+    </div>
+  </div>
+  {/* 추가적인 쿠폰 내역을 여기에 추가할 수 있습니다. */}
+</div>
 
       {/* Order section */}
-      <div
-        style={{
-          marginTop: '20px',
-          width: '800px',
-          padding: '20px',
-        }}
-      >
-        <h2>주문 내역</h2>
-        <hr style={{ margin: '20px 0', border: '1px solid black' }} />
-        <div style={{ display: 'flex', borderBottom: '1px solid black', paddingBottom: '10px' }}>
-          <div style={{ flex: 1, marginRight: '10px', paddingLeft: '10px', borderRight: '1px solid black' }}>
-            <p>주문 No</p>
-            {orderData.map((order) => (
-              <p key={order.orderNo}>{order.orderNo}</p>
-            ))}
-          </div>
-          <div style={{ flex: 2, paddingLeft: '10px' }}>
-            <p>주문 상품</p>
-            {orderData.map((order) => (
-              <p key={order.orderNo}>{order.orderProduct}</p>
-            ))}
-          </div>
-        </div>
-        {/* 추가적인 주문 내역을 여기에 추가할 수 있습니다. */}
-        
-      </div>
+<div
+  style={{
+    marginTop: '20px',
+    width: '800px',
+    padding: '20px',
+  }}
+>
+  <h2>주문 내역</h2>
+  <hr style={{ margin: '20px 0', border: '1px solid black' }} />
+  <div style={{ display: 'flex', borderBottom: '1px solid black', paddingBottom: '10px' }}>
+    <div style={{ flex: 1, marginRight: '10px', paddingLeft: '10px', borderRight: '1px solid black' }}>
+      <p style={{ marginBottom: '10px' }}>주문 No</p>
+      {orderData.map((order) => (
+        <p key={order.orderNo} style={{ marginBottom: '10px' }}>{order.orderNo}</p>
+      ))}
+    </div>
+    <div style={{ flex: 2, paddingLeft: '10px' }}>
+      <p style={{ marginBottom: '10px' }}>주문 상품</p>
+      {orderData.map((order) => (
+        <p key={order.orderNo} style={{ marginBottom: '10px' }}>{order.orderProduct}</p>
+      ))}
+    </div>
+  </div>
+  {/* 추가적인 주문 내역을 여기에 추가할 수 있습니다. */}
+</div>
+
     </div>
   );
 };
